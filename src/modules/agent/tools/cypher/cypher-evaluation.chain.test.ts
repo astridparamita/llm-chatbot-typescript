@@ -53,10 +53,13 @@ describe("Cypher Evaluation Chain", () => {
     let found = false;
 
     for (const error of errors) {
-      if (error.includes("label Muvee does not exist")) {
-        found = true;
+      // console.log(error);
+      // AP note: this is a horrible test considering the answer had to be the same wording with the quote and cap
+      if (error.includes("Label 'Muvee' does not exist")) {
+        found = true
       }
     }
+    console.log(errors)
 
     expect(found).toBe(true);
   });
@@ -87,6 +90,7 @@ describe("Cypher Evaluation Chain", () => {
         found = true;
       }
     }
+    console.log(errors)
 
     expect(found).toBe(true);
   });
@@ -101,6 +105,9 @@ describe("Cypher Evaluation Chain", () => {
     };
 
     const { cypher: updatedCypher, errors } = await chain.invoke(input);
+
+    // console.log(cypher);
+    console.log(errors);
 
     expect(updatedCypher).toContain(cypher);
     expect(errors.length).toBe(0);
@@ -118,6 +125,7 @@ describe("Cypher Evaluation Chain", () => {
     };
 
     const { cypher: updatedCypher, errors } = await chain.invoke(input);
+    console.log(errors)
 
     expect(updatedCypher).toContain(cypher);
     expect(errors.length).toBe(0);

@@ -11,6 +11,7 @@
     "test:watch": "cross-env DOTENV_CONFIG_PATH=./.env.local jest --watchAll --detectOpenHandles"
   },
   "dependencies": {
+    "20": "^1.0.0",
     "@babel/preset-env": "^7.23.8",
     "@langchain/community": "^0.0.30",
     "@langchain/core": "^0.1.48",
@@ -22,7 +23,7 @@
     "langchain": "^0.1.28",
     "marked": "^10.0.0",
     "neo4j-driver": "^5.14.0",
-    "next": "14.0.2",
+    "next": "^14.2.3",
     "openai": "^4.20.0",
     "react": "^18",
     "react-dom": "^18"
